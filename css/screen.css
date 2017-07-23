@@ -1,8 +1,8 @@
+@charset "UTF-8";
 /* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,45 +24,98 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
+}
+
+.container {
+  text-align: center;
+  margin-top: 100px;
+}
+.container ul li.compornent {
+  display: inline-block;
+  line-height: 40px;
+  perspective: 500px;
+}
+.container ul li.compornent a.face {
+  display: inline-block;
+  width: 40px;
+  color: #fff;
+  text-decoration: none;
+  background-color: turquoise;
+  cursor: default;
+  -webkit-transform-style: preserve-3D;
+  -moz-transform-style: preserve-3D;
+  -ms-transform-style: preserve-3D;
+  -o-transform-style: preserve-3D;
+  transform-style: preserve-3D;
+  -webkit-transform-origin: center top;
+  -moz-transform-origin: center top;
+  -ms-transform-origin: center top;
+  -o-transform-origin: center top;
+  transform-origin: center top;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+.container ul li.compornent a.face:hover, .container ul li.compornent a.face :focus {
+  -webkit-transform: rotateX(90deg) translateY(-20px);
+  -moz-transform: rotateX(90deg) translateY(-20px);
+  -ms-transform: rotateX(90deg) translateY(-20px);
+  -o-transform: rotateX(90deg) translateY(-20px);
+  transform: rotateX(90deg) translateY(-20px);
+}
+.container ul li.compornent a.face:hover::after, .container ul li.compornent a.face :focus::after {
+  background-color: lightseagreen;
+}
+.container ul li.compornent a.face::after {
+  content: attr(data-hover);
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  /* 真下にしたいので100% */
+  left: 0;
+  background-color: darkcyan;
+  -webkit-transform-origin: center top;
+  -moz-transform-origin: center top;
+  -ms-transform-origin: center top;
+  -o-transform-origin: center top;
+  transform-origin: center top;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  -ms-transform: rotateX(-90deg);
+  -o-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
 }

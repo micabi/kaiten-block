@@ -4,3 +4,45 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+@import "compass/css3";
+@import "compass/css3/transition";
+@import "compass/css3/transform";
+
+.container{
+  text-align: center;
+  margin-top: 100px;
+  ul li.compornent{
+    display: inline-block;
+    line-height: 40px;
+    perspective: 500px;
+    a.face{
+      display: inline-block;
+      width: 40px;
+      color: #fff;
+      text-decoration: none;
+      background-color: turquoise;
+      cursor: default;
+      @include transform-style(preserve-3D);
+      @include transform-origin(center, top);
+      @include transition(.4s);
+      &:hover,:focus{
+        @include transform(rotateX(90deg) translateY(-20px));
+        &::after{
+          background-color: lightseagreen;
+        }
+      }
+      &::after{
+        content: attr(data-hover);
+        width: 100%;
+        position: absolute;
+        top: 100%; /* 真下にしたいので100% */
+        left: 0;
+        background-color: darkcyan;
+        @include transform-origin(center, top);
+        @include rotateX(-90deg);
+      }
+    }
+
+
+  }
+}
